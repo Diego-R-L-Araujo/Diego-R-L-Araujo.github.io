@@ -1,0 +1,33 @@
+{
+  "data": {
+    "id": 379,
+    "name": "Praia de Fortaleza",
+    "startValidity": "2023-05-28T12:00:00+00:00",
+    "endValidity": "2023-06-29T12:00:00+00:00",
+    "imageUrlDesktop": "https://gipsyy-gds-stage-br.s3.sa-east-1.amazonaws.com/banner/Desk_91356c67-7983-4970-a209-94bc7e70d90f",
+    "imageUrlMobile": "https://gipsyy-gds-stage-br.s3.sa-east-1.amazonaws.com/banner/Mobi_349b5aab-bfc3-448f-917a-7befeb9cca6a",
+    "description": "Teste de Associação de Estado X Banner",
+    "buttonText": null,
+    "associationLink": null,
+    "sequence": 0,
+    "active": false,
+    "idCategory": 1,
+    "category": "Hero",
+    "categoryActive": true,
+    "bannerStatesList": [
+      {
+        "banner_id": 379,
+        "state_id": 1,
+        "created_date": "2023-05-29T21:19:38.913458+00:00",
+        "id": 0
+      },
+      {
+        "banner_id": 379,
+        "state_id": 5,
+        "created_date": "2023-05-29T21:19:38.913458+00:00",
+        "id": 0
+      }
+    ]
+  },
+  "success": true
+}

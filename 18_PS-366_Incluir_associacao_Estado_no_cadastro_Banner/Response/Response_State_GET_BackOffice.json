@@ -1,0 +1,275 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "initials": "AC",
+      "name": "Acre ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 14,
+      "initials": "AL",
+      "name": "Alagoas ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 6,
+      "initials": "AP",
+      "name": "Amapá ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 3,
+      "initials": "AM",
+      "name": "Amazonas",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 16,
+      "initials": "BA",
+      "name": "Bahia",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 10,
+      "initials": "CE",
+      "name": "Ceará ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 27,
+      "initials": "DF",
+      "name": "Distrito Federal",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 18,
+      "initials": "ES",
+      "name": "Espírito Santo",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 26,
+      "initials": "GO",
+      "name": "Goiás",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 8,
+      "initials": "MA",
+      "name": "Maranhão ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 25,
+      "initials": "MT",
+      "name": "Mato Grosso",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 24,
+      "initials": "MS",
+      "name": "Mato Grosso do Sul",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 17,
+      "initials": "MG",
+      "name": "Minas Gerais",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 5,
+      "initials": "PA",
+      "name": "Pará ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 12,
+      "initials": "PB",
+      "name": "Paraíba ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 21,
+      "initials": "PR",
+      "name": "Paraná",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 13,
+      "initials": "PE",
+      "name": "Pernambuco ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 9,
+      "initials": "PI",
+      "name": "Piauí",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 19,
+      "initials": "RJ",
+      "name": "Rio de Janeiro",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 11,
+      "initials": "RN",
+      "name": "Rio Grande do Norte ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 23,
+      "initials": "RS",
+      "name": "Rio Grande do Sul",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 1,
+      "initials": "RO",
+      "name": "Rondônia",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 4,
+      "initials": "RR",
+      "name": "Roraima ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 22,
+      "initials": "SC",
+      "name": "Santa Catarina",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 20,
+      "initials": "SP",
+      "name": "São Paulo",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 15,
+      "initials": "SE",
+      "name": "Sergipe",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    },
+    {
+      "id": 7,
+      "initials": "TO",
+      "name": "Tocantins ",
+      "ibge": null,
+      "timeZoneId": 0,
+      "countryId": 2,
+      "countryName": "Brazil",
+      "active": true
+    }
+  ],
+  "success": true
+}

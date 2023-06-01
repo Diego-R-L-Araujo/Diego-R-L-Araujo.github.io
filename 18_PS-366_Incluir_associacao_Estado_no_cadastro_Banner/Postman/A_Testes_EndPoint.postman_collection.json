@@ -1,0 +1,913 @@
+{
+	"info": {
+		"_postman_id": "bbcb0710-c335-4d76-be18-91bc0e3b1575",
+		"name": "A_Testes_EndPoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22631080"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign in user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful POST request criado 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"token\", jsonData.token);\r",
+									"console.log(\"Bearer_token --->\", jsonData.token);\r",
+									"console.log(\"End_of_Test_Sign-in-User_Token\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_Sign-in-User_Token\");\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"strictSSL": true,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{Authentication_Email}}\",\r\n    \"password\": \"{{Authentication_Password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/User/SignIn",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"User",
+								"SignIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful GET request Obtenção 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(\"GETALL-Users\", jsonData);\r",
+									"console.log(\"End_of_Test_GetAllUsers\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_GetAllUsers\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"strictSSL": true,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/User",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get record by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful GET request Obtenção 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(\"GETALL-Users\", jsonData);\r",
+									"console.log(\"End_of_Test_Get-User-id\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"var Email_Authentication = (\"diego.araujo@gipsyy.com.br\");\r",
+									"var Senha_Authentication = (\"20350802Did!\");\r",
+									"\r",
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_Get-User-id\");\r",
+									"\r",
+									"\r",
+									"console.log (\"Email_Authentication\", Email_Authentication);\r",
+									"console.log (\"Senha_Authentication\", Senha_Authentication);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"strictSSL": true,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/User/57",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"User",
+								"57"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "Get all Banner - Obter todos os banners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful GET request Obtenção 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(\"GetAll_Banner's\", jsonData);\r",
+									"console.log(\"End_of_Test_GetAll_Banner's\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_GetAll_Banner's\");\r",
+									"\r",
+									"const random3 = (min, max) => Math.floor(Math.random() * (min - max) + max);\r",
+									"var minEndmax3 = random3 (1, 3);\r",
+									"pm.environment.set(\"Random_Category_ID\", minEndmax3);\r",
+									"\r",
+									"console.log(\"Random_Category_ID\", minEndmax3);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"removeRefererHeaderOnRedirect": false,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/Banner",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"Banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Banner - Criar banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful POST request criado 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"Banner_id\", jsonData.data.id);\r",
+									"console.log(\"POST-Banner-id\", jsonData.data.id);\r",
+									"console.log(\"POST-Banner-id\", jsonData.data);\r",
+									"console.log(\"End_of_Test_Post_Banner\");\r",
+									"console.log();\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_Post_Banner\");\r",
+									"\r",
+									"const random = (max, min,) => Math.floor(Math.random() * (max + min) - min);\r",
+									"var maxEndmin = random (27, 1);\r",
+									"pm.environment.set(\"Random_State_ID1\", maxEndmin);\r",
+									"\r",
+									"const random2 = (min, max) => Math.floor(Math.random() * (min - max) + max);\r",
+									"var minEndmax2 = random2 (1, 27);\r",
+									"pm.environment.set(\"Random_State_ID2\", minEndmax2);\r",
+									"\r",
+									"const random3 = (min, max) => Math.floor(Math.random() * (min - max) + max);\r",
+									"var minEndmax3 = random3 (1, 3);\r",
+									"pm.environment.set(\"Random_Category_ID\", minEndmax3);\r",
+									"\r",
+									"\r",
+									"console.log(\"Random_State_ID1\", maxEndmin);\r",
+									"console.log(\"Random_State_ID2\", minEndmax2);\r",
+									"console.log(\"Random_Category_ID\", minEndmax3);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "IdBannerCategory",
+									"value": "1",
+									"description": "Category: 1(Hero); 2(Generic); 3(Footer)",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "Postman_Post_Banner_Estados{{$randomFullName}}",
+									"description": "string - Texto",
+									"type": "text"
+								},
+								{
+									"key": "StartValidity",
+									"value": "01-28-2023 12:00",
+									"description": "string($date-time) - Texto(data e hora) Inicio",
+									"type": "text"
+								},
+								{
+									"key": "EndValidity",
+									"value": "12-29-2023 12:00",
+									"description": "string($date-time) - Texto(data e hora) Fim",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "Teste de Associação de Estado X Banner-POST",
+									"description": "string - Descrição do Banner",
+									"type": "text"
+								},
+								{
+									"key": "Active",
+									"value": "{{$randomBoolean}}",
+									"description": "Boolean",
+									"type": "text"
+								},
+								{
+									"key": "BannerStatesList",
+									"value": "{{Random_State_ID1}}",
+									"description": "Array",
+									"type": "text"
+								},
+								{
+									"key": "FileImageMobile",
+									"description": "string($binary) - Importação de imagem Webp - Mobile",
+									"type": "file",
+									"src": "/C:/Users/Diego Ribeiro/Documents/Gipsyy/3 - QA/BackOffice/1 - QA_Doc_Para_Teste/2 - Imagens para exportação/WebP/Editadas/Mobile/Nosso-Rio-200X200.webp"
+								},
+								{
+									"key": "FileImageDesktop",
+									"description": "string($binary) - Importação de imagem Webp - Desktop",
+									"type": "file",
+									"src": "/C:/Users/Diego Ribeiro/Documents/Gipsyy/3 - QA/BackOffice/1 - QA_Doc_Para_Teste/2 - Imagens para exportação/WebP/Editadas/Desktop/Nosso-Rio-200X800.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/Banner",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"Banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updates the Banner record - Atualiza o registro do Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Positivo Solicitação PUT bem-sucedida\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(\"PUT-Banner-id\", jsonData.data.id);\r",
+									"console.log(\"PUT-Banner-id\", jsonData.data);\r",
+									"console.log(\"End_of_Test_PUT_Banner\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_PUT_Banner\");\r",
+									"\r",
+									"const random = (max, min,) => Math.floor(Math.random() * (max + min) - min);\r",
+									"var maxEndmin = random (27, 1);\r",
+									"pm.environment.set(\"Random_State_ID1\", maxEndmin);\r",
+									"\r",
+									"const random2 = (min, max) => Math.floor(Math.random() * (min - max) + max);\r",
+									"var minEndmax2 = random2 (1, 27);\r",
+									"pm.environment.set(\"Random_State_ID2\", minEndmax2);\r",
+									"\r",
+									"console.log(\"Random_State_ID1\", maxEndmin);\r",
+									"console.log(\"Random_State_ID2\", minEndmax2);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"insecureHTTPParser": false,
+						"followAuthorizationHeader": true,
+						"followOriginalHttpMethod": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "IdBannerCategory",
+									"value": "3",
+									"description": "Category: 1(Hero); 2(Generic); 3(Footer)",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "Postman_PUT_{{$randomFullName}}",
+									"description": "string - Texto",
+									"type": "text"
+								},
+								{
+									"key": "StartValidity",
+									"value": "01-28-2023 12:00",
+									"description": "string($date-time) - Texto(data e hora) Inicio",
+									"type": "text"
+								},
+								{
+									"key": "EndValidity",
+									"value": "12-29-2023 12:00",
+									"description": "string($date-time) - Texto(data e hora) Fim",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "Teste de Associação de Estado X Banner-PUT",
+									"description": "string($binary) - Importação de imagem Webp - Desktop",
+									"type": "text"
+								},
+								{
+									"key": "Active",
+									"value": "{{$randomBoolean}}",
+									"description": "string($binary) - Importação de imagem Webp - Mobile",
+									"type": "text"
+								},
+								{
+									"key": "FileImageDesktop",
+									"description": "string($binary) - Importação de imagem Webp - Desktop",
+									"type": "file",
+									"src": "/C:/Users/Diego Ribeiro/Documents/Gipsyy/1 - Doc para Teste/2 - Imagens para exportação/WebP/Editadas/Desktop/Nosso-Rio-200X800.webp",
+									"disabled": true
+								},
+								{
+									"key": "FileImageMobile",
+									"description": "string($binary) - Importação de imagem Webp - Mobile",
+									"type": "file",
+									"src": "/C:/Users/Diego Ribeiro/Documents/Gipsyy/1 - Doc para Teste/2 - Imagens para exportação/WebP/Editadas/Mobile/Nosso-Rio-200X200.webp",
+									"disabled": true
+								},
+								{
+									"key": "BannerStatesList[0]",
+									"value": "{{Random_State_ID1}}",
+									"description": "Array[0]",
+									"type": "text"
+								},
+								{
+									"key": "BannerStatesList[1]",
+									"value": "{{Random_State_ID2}}",
+									"description": "Array[1]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/Banner/{{Banner_id}}",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"Banner",
+								"{{Banner_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Banner with {Id} - Obter Banner por id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful GET request Obtenção 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(\"GET-Banner-id\", jsonData.data.id);\r",
+									"console.log(\"GET-Banner-id\", jsonData.data);\r",
+									"console.log(\"End_of_Test_GetAll_Banner-id\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_Get_Banner-id\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/Banner/{{Banner_id}}",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"Banner",
+								"{{Banner_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes the Banner record - Exclui o registro do Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Positivo Requisição bem sucedida 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful DELETE request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var schema = {\r",
+									"    \"data\": {\r",
+									"        \"type\": \"boolean\"\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"var data1 = [true, false];\r",
+									"var data2 = [true, 123];\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(data1, schema)).to.be.true;\r",
+									"    pm.expect(tv4.validate(data2, schema)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(\"DELETE-Banner-id\", jsonData.data.id);\r",
+									"console.log(\"DELETE-Banner-id\", jsonData.data);\r",
+									"console.log(\"End_of_Test_Delete_Banner-id\");\r",
+									"console.log();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"console.log();\r",
+									"console.log(\"Start_Test_Delete_Banner-id\");\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": true,
+						"followAuthorizationHeader": true,
+						"insecureHTTPParser": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl-STG}}/api/Banner/{{Banner_id}}",
+							"host": [
+								"{{baseUrl-STG}}"
+							],
+							"path": [
+								"api",
+								"Banner",
+								"{{Banner_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

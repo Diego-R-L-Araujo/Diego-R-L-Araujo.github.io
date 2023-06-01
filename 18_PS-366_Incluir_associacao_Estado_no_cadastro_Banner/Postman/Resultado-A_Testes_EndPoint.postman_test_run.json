@@ -1,0 +1,407 @@
+{
+	"id": "e0cca535-6255-465f-b3a4-cde8c6b099c8",
+	"name": "A_Testes_EndPoint",
+	"timestamp": "2023-06-01T02:31:58.095Z",
+	"collection_id": "22631080-bbcb0710-c335-4d76-be18-91bc0e3b1575",
+	"folder_id": 0,
+	"environment_id": "22631080-f1ad7e0a-211f-47a7-8cfa-9a438900b1c0",
+	"totalPass": 31,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-06-01T02:31:52.202Z",
+	"totalFail": 4,
+	"results": [
+		{
+			"id": "9d4451c3-a7ea-44e2-a21a-5d206700e624",
+			"name": "Sign in user",
+			"url": "https://gds-stage.gipsyy.com.br/api/User/SignIn",
+			"time": 145,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Successful POST request criado 201": false,
+				"Response time is less than 500ms": true,
+				"Content-Type is present": true,
+				"Schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request criado 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				145
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Successful POST request criado 201": false,
+					"Response time is less than 500ms": true,
+					"Content-Type is present": true,
+					"Schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "c247fac0-6d2b-4765-98d2-6fcaa7ee6741",
+			"name": "Get all users",
+			"url": "https://gds-stage.gipsyy.com.br/api/User",
+			"time": 153,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Successful GET request Obtenção 200": true,
+				"Response time is less than 500ms": true,
+				"Content-Type is present": true,
+				"Schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request Obtenção 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				153
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Successful GET request Obtenção 200": true,
+					"Response time is less than 500ms": true,
+					"Content-Type is present": true,
+					"Schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "9e4f7dc6-f88a-4a4d-bec1-20cf8199e7cf",
+			"name": "Get all Banner - Obter todos os banners",
+			"url": "https://gds-stage.gipsyy.com.br/api/Banner",
+			"time": 192,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Successful GET request Obtenção 200": true,
+				"Response time is less than 500ms": true,
+				"Content-Type is present": true,
+				"Schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request Obtenção 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				192
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Successful GET request Obtenção 200": true,
+					"Response time is less than 500ms": true,
+					"Content-Type is present": true,
+					"Schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "e5fab58f-4a5d-49a2-bb02-b2a4146f9349",
+			"name": "Create Banner - Criar banner",
+			"url": "https://gds-stage.gipsyy.com.br/api/Banner",
+			"time": 2265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Successful POST request criado 201": false,
+				"Response time is less than 500ms": false,
+				"Content-Type is present": true,
+				"Schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request criado 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2265
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Successful POST request criado 201": false,
+					"Response time is less than 500ms": false,
+					"Content-Type is present": true,
+					"Schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "ee6d04d7-dcfa-4d5c-81b6-c85f28a03e4a",
+			"name": "Updates the Banner record - Atualiza o registro do Banner",
+			"url": "https://gds-stage.gipsyy.com.br/api/Banner/441",
+			"time": 232,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Positivo Solicitação PUT bem-sucedida": true,
+				"Response time is less than 500ms": true,
+				"Content-Type is present": true,
+				"Schema is valid": true
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Positivo Solicitação PUT bem-sucedida": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				232
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Positivo Solicitação PUT bem-sucedida": true,
+					"Response time is less than 500ms": true,
+					"Content-Type is present": true,
+					"Schema is valid": true
+				}
+			]
+		},
+		{
+			"id": "12148f10-6dea-4837-b920-57d64f221aa8",
+			"name": "Get Banner with {Id} - Obter Banner por id",
+			"url": "https://gds-stage.gipsyy.com.br/api/Banner/441",
+			"time": 159,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Successful GET request": true,
+				"Content-Type is present": true,
+				"Schema is valid": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				159
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Successful GET request": true,
+					"Content-Type is present": true,
+					"Schema is valid": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "96bcba06-a041-42b5-b262-c076a2bf450c",
+			"name": "Deletes the Banner record - Exclui o registro do Banner",
+			"url": "https://gds-stage.gipsyy.com.br/api/Banner/441",
+			"time": 1171,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Positivo Requisição bem sucedida 200": true,
+				"Successful DELETE request": true,
+				"Content-Type is present": true,
+				"Schema is valid": true,
+				"Response time is less than 500ms": false
+			},
+			"testPassFailCounts": {
+				"Positivo Requisição bem sucedida 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful DELETE request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				1171
+			],
+			"allTests": [
+				{
+					"Positivo Requisição bem sucedida 200": true,
+					"Successful DELETE request": true,
+					"Content-Type is present": true,
+					"Schema is valid": true,
+					"Response time is less than 500ms": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4317,
+	"collection": {
+		"requests": [
+			{
+				"id": "9d4451c3-a7ea-44e2-a21a-5d206700e624",
+				"method": "POST"
+			},
+			{
+				"id": "c247fac0-6d2b-4765-98d2-6fcaa7ee6741",
+				"method": "GET"
+			},
+			{
+				"id": "9e4f7dc6-f88a-4a4d-bec1-20cf8199e7cf",
+				"method": "GET"
+			},
+			{
+				"id": "e5fab58f-4a5d-49a2-bb02-b2a4146f9349",
+				"method": "POST"
+			},
+			{
+				"id": "ee6d04d7-dcfa-4d5c-81b6-c85f28a03e4a",
+				"method": "PUT"
+			},
+			{
+				"id": "12148f10-6dea-4837-b920-57d64f221aa8",
+				"method": "GET"
+			},
+			{
+				"id": "96bcba06-a041-42b5-b262-c076a2bf450c",
+				"method": "DELETE"
+			}
+		]
+	}
+}
